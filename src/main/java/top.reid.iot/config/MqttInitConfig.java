@@ -34,7 +34,7 @@ public class MqttInitConfig {
      * 客户端自定义 ID<br>
      * 如果没有配置，默认 MQTT 客户端 ID 为 ip:port
      */
-    @Value("${reid.mqtt.client-id}")
+    @Value("${reid.mqtt.client-id:}")
     private String clientId;
 
     @Bean
