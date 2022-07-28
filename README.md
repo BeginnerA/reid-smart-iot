@@ -1,5 +1,16 @@
 # MQTT
-物联网开发，MQTT 封装
+物联网开发，MQTT 封装。
+这是一个物联网开发可插拔组件，将此组件下载集成到项目，在项目 pom.xml 文件中引入依赖即可。
+## 依赖
+```
+<dependency>
+	<groupId>top.reid.smart.iot</groupId>
+	<artifactId>reid-smart-iot</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+</dependency>
+
+```
+[完整演示项目](https://github.com/BeginnerA/reid-smart-pro)
 ## 封装接口
 * 发布消息，直接注入接口 PublisherService，调用相关成员方法。
 * 订阅消息，直接注入接口 SubscribeService，调用相关成员方法。

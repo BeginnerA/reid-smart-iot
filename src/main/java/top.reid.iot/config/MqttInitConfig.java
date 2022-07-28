@@ -1,5 +1,6 @@
 package top.reid.iot.config;
 
+import cn.hutool.core.util.StrUtil;
 import top.reid.iot.entity.MqttV3Client;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
@@ -40,9 +41,11 @@ public class MqttInitConfig {
     @ConditionalOnMissingBean(value = {MqttV3Client.class})
     public MqttV3Client mqttV3Client() {
         try {
-            InetAddress localHost = Inet4Address.getLocalHost();
-            String ip = localHost.getHostAddress();
-            String clientId = ip + ":" + port;
+            if (StrUtil.isEmpty(clientId)) {
+                InetAddress localHost = Inet4Address.getLocalHost();
+                String ip = localHost.getHostAddress();
+                clientId = ip + ":" + port;
+            }
             return new MqttV3Client(clientId);
         } catch (UnknownHostException e) {
             e.printStackTrace();
