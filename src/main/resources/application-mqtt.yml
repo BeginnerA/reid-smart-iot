@@ -1,12 +1,4 @@
-# MQTT
-物联网开发，MQTT 封装
-## 封装接口
-* 发布消息，直接注入接口 PublisherService，调用相关成员方法。
-* 订阅消息，直接注入接口 SubscribeService，调用相关成员方法。
-* 取消订阅，直接注入接口 UnsubscribeService，调用相关成员方法。
-## 配置说明
-用户根据需要选择配置就行。
-```
+# 配置说明（可以删除），也可以直接修改并且引用
 reid:
   # MQTT 配置
   mqtt:
@@ -44,4 +36,3 @@ reid:
       table-name-prefix: iot_ # 持久化表名称前缀。此配置只作用于自动生成表名。默认：iot_
       table-name-suffix: table # 持久化表名后缀。此配置只作用于自动生成表名
 
-```
