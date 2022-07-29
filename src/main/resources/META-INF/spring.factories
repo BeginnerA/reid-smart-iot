@@ -1,2 +1,2 @@
 org.springframework.boot.autoconfigure.EnableAutoConfiguration = \
-  top.reid.iot.ActuatorConfig
+  top.reid.smart.ActuatorConfig
