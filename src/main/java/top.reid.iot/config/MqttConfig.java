@@ -30,7 +30,7 @@ public class MqttConfig {
      */
     private String clientId;
     /***
-     * MQTT 服务地址
+     * MQTT 服务地址。
      **/
     private String host;
     /**
@@ -59,7 +59,7 @@ public class MqttConfig {
      * @return 连接选项
      */
     public MqttConnectOptions getConnectOptions(){
-        return options.getConnectOptions();
+        return options.getConnectOptions(host);
     }
 
     /**

@@ -1,4 +1,4 @@
-# 配置说明（可以删除），也可以直接修改并且引用
+
 reid:
   # MQTT 配置
   mqtt:
@@ -13,7 +13,7 @@ reid:
         user-context: null # 用于将上下文传递给回调的可选对象。如果不需要，可以为 null
         message-listener: com.module.Test.MyAbstractMessageListener # 自定义 MQTT 客户端消息监听器
     options:
-      server-urls: tcp://localhost:1883,ssl://localhost:8883 # 设置客户端可以连接到的一个或多个服务器的地址列表
+      server-urls: tcp://localhost:1883,ssl://localhost:8883 # 设置客户端可以连接到的一个或多个服务器的地址列表，如果设置了 serverUrls，那么它将覆盖在 MQTT 客户端的构造函数中传入的 host 参数
       username: reid # 设置用于连接的用户名
       password: 123456 # 设置用于连接的密码
       connection-timeout: 60 # 连接超时时间(单位秒)。默认：30秒

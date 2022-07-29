@@ -34,7 +34,29 @@ import java.security.cert.CertificateException;
 @ConfigurationProperties(prefix = "reid.mqtt.options")
 public class ConnectOptions {
     /**
-     * 客户端可以连接的 MQTT 服务器，用英文逗号间隔
+     * 客户端可以连接的备用 MQTT 服务器，用英文逗号间隔。
+     * <p>
+     * 当启动连接尝试时，客户端将从列表中的第一个 serverURI 开始，并通过列表工作，直到与服务器建立连接，
+     * 如果成功链接一台服务器，后面的服务器将不会尝试去链接。如果无法与任何服务器建立连接，则连接尝试将失败。
+     * </p>
+     * <p>
+     * 指定客户端可以连接的服务器列表有多种用途：
+     * </p>
+     * <ol>
+     * <li>高可用性和可靠的消息传递</li>
+     * <p>
+     * 一些 MQTT 服务器支持高可用性功能，其中两个或更多“相等”的 MQTT 服务器共享状态。
+     * MQTT 客户端可以连接到任何“同等”的服务器，并确保无论客户端连接到哪个服务器，消息都能可靠传递并保持持久订阅。
+     * </p>
+     * <p>
+     * 如果需要持久订阅和/或可靠的消息传递，则 cleansession 标志必须设置为 false。
+     * </p>
+     * <li>狩猎清单</li>
+     * <p>
+     * 可以指定一组不“相等”的服务器（如在高可用性选项中）。由于服务器之间没有共享状态，因此可靠的消息传递和持久订阅无效。
+     * 如果使用搜寻列表模式，则 cleansession 标志必须设置为 true
+     * </p>
+     * </ol>
      */
     private String serverUrls;
     /**
@@ -148,12 +170,14 @@ public class ConnectOptions {
 
     /**
      * 获取链接选项，包含控制客户端如何连接到服务器的选项集
+     * @param host 主链接地址
      * @return 链接选项
      */
-    public MqttConnectOptions getConnectOptions(){
+    public MqttConnectOptions getConnectOptions(String host){
         MqttConnectOptions options = new MqttConnectOptions();
         if (StrUtil.isNotEmpty(serverUrls)) {
-            options.setServerURIs(serverUrls.split(","));
+            String urls = host + "," + serverUrls;
+            options.setServerURIs(urls.split(","));
         }
         if (StrUtil.isNotEmpty(this.username)) {
             options.setUserName(this.username);

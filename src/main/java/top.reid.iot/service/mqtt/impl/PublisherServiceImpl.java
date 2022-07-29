@@ -1,6 +1,7 @@
 package top.reid.iot.service.mqtt.impl;
 
 import cn.hutool.core.util.ObjectUtil;
+import cn.hutool.core.util.StrUtil;
 import top.reid.iot.config.MqttConfig;
 import top.reid.iot.entity.MqttResult;
 import top.reid.iot.entity.Publish;
@@ -41,7 +42,7 @@ public class PublisherServiceImpl implements PublisherService {
     @Override
     public MqttResult publish(Publish publish) {
         entryCheck(publish);
-        MqttMessage mqttMessage = new MqttMessage(ObjectUtil.serialize(publish.getMessage()));
+        final MqttMessage mqttMessage = new MqttMessage(StrUtil.toString(publish.getMessage()).getBytes());
         mqttMessage.setQos(publish.getQos().getValue());
         mqttMessage.setRetained(publish.getRetain());
         try {
@@ -66,7 +67,7 @@ public class PublisherServiceImpl implements PublisherService {
     @Override
     public void publishAsync(Publish publish) {
         entryCheck(publish);
-        MqttMessage mqttMessage = new MqttMessage(ObjectUtil.serialize(publish.getMessage()));
+        final MqttMessage mqttMessage = new MqttMessage(ObjectUtil.serialize(publish.getMessage()));
         mqttMessage.setQos(publish.getQos().getValue());
         mqttMessage.setRetained(publish.getRetain());
         if (publish.getCallbackAsync() == null) {
