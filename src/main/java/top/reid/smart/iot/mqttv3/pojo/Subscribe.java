@@ -1,4 +1,4 @@
-package top.reid.smart.iot.entity;
+package top.reid.smart.iot.mqttv3.pojo;
 
 import cn.hutool.core.util.ReflectUtil;
 import top.reid.smart.iot.mqttv3.listener.AbstractMessageListener;

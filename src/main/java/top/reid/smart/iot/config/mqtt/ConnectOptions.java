@@ -1,4 +1,4 @@
-package top.reid.smart.iot.config;
+package top.reid.smart.iot.config.mqtt;
 
 import cn.hutool.core.util.StrUtil;
 import lombok.Data;

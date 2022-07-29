@@ -1,6 +1,6 @@
-package top.reid.smart.iot.config;
+package top.reid.smart.iot.config.mqtt;
 
-import top.reid.smart.iot.entity.Subscribe;
+import top.reid.smart.iot.mqttv3.pojo.Subscribe;
 import lombok.Data;
 import org.eclipse.paho.client.mqttv3.MqttConnectOptions;
 import org.springframework.boot.context.properties.ConfigurationProperties;

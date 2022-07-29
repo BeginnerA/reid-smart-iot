@@ -2,9 +2,9 @@ package top.reid.smart.iot.service.mqtt.impl;
 
 import cn.hutool.core.util.ObjectUtil;
 import cn.hutool.core.util.StrUtil;
-import top.reid.smart.iot.config.MqttConfig;
-import top.reid.smart.iot.entity.MqttResult;
-import top.reid.smart.iot.entity.Publish;
+import top.reid.smart.iot.config.mqtt.MqttConfig;
+import top.reid.smart.iot.mqttv3.pojo.MqttResult;
+import top.reid.smart.iot.mqttv3.pojo.Publish;
 import top.reid.smart.iot.mqttv3.listener.AbstractPublishListener;
 import top.reid.smart.iot.mqttv3.MqttV3Executor;
 import top.reid.smart.iot.service.mqtt.PublisherService;

@@ -4,7 +4,7 @@ import cn.hutool.core.collection.CollUtil;
 import cn.hutool.core.util.StrUtil;
 import cn.hutool.extra.spring.SpringUtil;
 import cn.hutool.json.JSONUtil;
-import top.reid.smart.iot.config.MqttConfig;
+import top.reid.smart.iot.config.mqtt.MqttConfig;
 import top.reid.smart.iot.service.device.DeviceDataService;
 import top.reid.smart.iot.service.mqtt.SubscribeService;
 import lombok.extern.slf4j.Slf4j;

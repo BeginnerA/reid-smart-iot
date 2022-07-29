@@ -1,8 +1,8 @@
 package top.reid.smart.iot.mqttv3;
 
-import top.reid.smart.iot.config.MqttConfig;
-import top.reid.smart.iot.entity.MqttV3Client;
-import top.reid.smart.iot.entity.Subscribe;
+import top.reid.smart.iot.config.mqtt.MqttConfig;
+import top.reid.smart.iot.mqttv3.pojo.MqttV3Client;
+import top.reid.smart.iot.mqttv3.pojo.Subscribe;
 import top.reid.smart.iot.mqttv3.listener.ConnectListener;
 import lombok.extern.slf4j.Slf4j;
 import org.eclipse.paho.client.mqttv3.IMqttAsyncClient;

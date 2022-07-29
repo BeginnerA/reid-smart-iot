@@ -1,7 +1,7 @@
-package top.reid.smart.iot.config;
+package top.reid.smart.iot.config.mqtt;
 
 import cn.hutool.core.util.StrUtil;
-import top.reid.smart.iot.entity.MqttV3Client;
+import top.reid.smart.iot.mqttv3.pojo.MqttV3Client;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.context.annotation.Bean;

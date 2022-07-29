@@ -1,4 +1,4 @@
-package top.reid.smart.iot.config;
+package top.reid.smart.iot.config.mqtt;
 
 import lombok.Data;
 import org.springframework.boot.context.properties.ConfigurationProperties;

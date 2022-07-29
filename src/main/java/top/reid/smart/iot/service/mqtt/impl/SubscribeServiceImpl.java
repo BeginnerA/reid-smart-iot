@@ -1,7 +1,7 @@
 package top.reid.smart.iot.service.mqtt.impl;
 
-import top.reid.smart.iot.entity.MqttResult;
-import top.reid.smart.iot.entity.Subscribe;
+import top.reid.smart.iot.mqttv3.pojo.MqttResult;
+import top.reid.smart.iot.mqttv3.pojo.Subscribe;
 import top.reid.smart.iot.mqttv3.listener.AbstractSubscribeListener;
 import top.reid.smart.iot.mqttv3.MqttV3Executor;
 import top.reid.smart.iot.service.mqtt.SubscribeService;

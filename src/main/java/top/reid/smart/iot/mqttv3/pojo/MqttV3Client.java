@@ -1,4 +1,4 @@
-package top.reid.smart.iot.entity;
+package top.reid.smart.iot.mqttv3.pojo;
 
 import lombok.Getter;
 
