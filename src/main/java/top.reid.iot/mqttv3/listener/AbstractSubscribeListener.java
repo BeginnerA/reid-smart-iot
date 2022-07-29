@@ -20,11 +20,11 @@ import org.eclipse.paho.client.mqttv3.IMqttToken;
  * @Version V1.0
  **/
 @Slf4j
-public abstract class AbstractSubscribeListener implements IMqttActionListener {
+public abstract class AbstractSubscribeListener extends MqttListener implements IMqttActionListener {
     @Override
     public void onSuccess(IMqttToken mqttToken) {
         log.info("---------------------------------MQTT 异步订阅消息成功---------------------------------");
-        MqttLogInfo.info(mqttToken, null);
+        this.info(mqttToken, null);
         log.info("-------------------------------------------------------------------------------------");
         success(mqttToken);
     }
@@ -32,7 +32,7 @@ public abstract class AbstractSubscribeListener implements IMqttActionListener {
     @Override
     public void onFailure(IMqttToken mqttToken, Throwable throwable) {
         log.info("---------------------------------MQTT 异步订阅消息失败---------------------------------");
-        MqttLogInfo.info(mqttToken, throwable);
+        this.info(mqttToken, throwable);
         log.info("-------------------------------------------------------------------------------------");
         fail(mqttToken, throwable);
     }

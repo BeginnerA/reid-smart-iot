@@ -16,13 +16,13 @@ import org.eclipse.paho.client.mqttv3.IMqttToken;
  * @Version V1.0
  **/
 @Slf4j
-public class MqttLogInfo {
+public class MqttListener {
 
     /**
-     * 输出特定日志信息，发布开发人员查阅
+     * 输出特定日志信息，方便开发人员查阅
      * @param mqttToken MQTT 令牌
      */
-    public static void info(IMqttToken mqttToken, Throwable throwable) {
+    public void info(IMqttToken mqttToken, Throwable throwable) {
         log.info("客户端 ID：{}", mqttToken.getClient().getClientId());
         log.info("主题：{}", JSONUtil.toJsonStr(mqttToken.getTopics()));
         log.info("上下文对象：{}", mqttToken.getUserContext() != null ? mqttToken.getUserContext().toString() : "NULL");
